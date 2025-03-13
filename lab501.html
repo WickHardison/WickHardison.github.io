@@ -1,27 +1,23 @@
 <html>
   <head>
-    <title>This is my second web page.</title>
+    <title>Web Mapping Lan.</title>
     <style>
-      h1 { font-family: arial, times;
-           color: blue;}
-      #thingsilike { color: blue;
-                   background-color: lightblue;}
+      h1 { font-family: arial, times; color: blue;}
+      #thingsilike { color: blue; background-color: lightblue;}
       p {font-family: cursive, arial, times;}
-      #photo  { 
-        margin-top: 100px;
-        margin-bottom: 100px;
-        margin-right: 150px;
-        margin-left: 80px;
-        height: 5%;}
+
+      /* Apply resizing to the image inside #photo */
+      #photo img { 
+        width: 200px;    /* Resize image to 200px */
+        height: auto;    /* Maintain the aspect ratio */
+      }
     </style>
   </head>
   
   <body>
     <div id="container">
-      <h1>MY SECOND WEB PAGE!!!</h1>
-      <p>This is my first paragraph of my second web page, I'm not really sure what to type here.</p>
-      <h3>SMALLER HEADER</h3>
-      <p>Here is some more text of random stuff, I hope this counts as a paragraph.</p>
+      <h1>Facts about Wick!</h1>
+      <p>This page is going to be a collection of some random facts about myself.</p>
 
       <div id="thingsilike">
         <h3>Here are some things I like</h3>
@@ -34,6 +30,9 @@
         </ul>
       </div>
 
+      <h3>I'm a bio major and love everything outside.</h3>
+      <p>One thing I like to do around this time of the year is ski</p>
+
       <div id="ski">
         <h3>Places I've skied this year</h3>
         <table>
@@ -42,32 +41,30 @@
             <th>Location</th>
           </tr>
           <tr>
-            <td>Boyne Highlands</td>
+            <td><a href="https://www.highlandsharborsprings.com/">Boyne Highlands</a></td>
             <td>MI</td>
           </tr>
           <tr>
-            <td>Vail</td>
+            <td><a href="https://www.vail.com/">Vail</a></td>
             <td>CO</td>
           </tr>
           <tr>
-            <td>Crested Butte</td>
+            <td><a href="https://www.skicb.com/">Crested Butte</a></td>
             <td>CO</td>
           </tr>
           <tr>
-            <td>Loveland</td>
+            <td><a href="https://skiloveland.com/">Loveland</a></td>
             <td>CO</td>
           </tr>
         </table>
       </div>
 
       <div id="photo">
-        <img src="https://atlantahumane.org/wp-content/uploads/2023/04/0-dogs-hero.jpg" alt="cute dog">
-        <p class="caption">Cute dog</p>
-        <p class="caption">Photo from https://atlantahumane.org/wp-content/uploads/2023/04/0-dogs-hero.jpg</p>
+        <img src="https://github.com/WickHardison/WickHardison.github.io/blob/main/fozzy.jpg?raw=true" alt="Cute dog">
       </div>
 
-      <p><a href="https://wickhardison.github.io/lab401.html">Lab 1</a></p>
-      <p><a href="https://wickhardison.github.io/lab402.html">Lab 2</a></p>
+      <p class="caption">My sister's dog; Fozzie... Not featured, my better dog; Yogi</p>
+
     </div>
   </body>
 </html>
