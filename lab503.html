@@ -1,65 +1,119 @@
 <html>
   <head>
-    <title>This is my second web page.</title>
+    <title>Web Mapping Lan.</title>
     <style>
 
+      * { font-family: times;
+          text-align: center;}
 
-      
+      #thingsilike { color: #383838; 
+                     background-color: #e8e8e8;
+                     width: 300px;
+                     height: 200px;
+                     border: 2px solid #969187;
+                     border-radius: 15px;
+                     font-size: 20px;}
+
+              #ski { color: #383838;
+                     background-color: #e8e8e8;
+                     width: 300px;
+                     border: 2px solid #969187;
+                     border-radius: 15px;
+                     font-size: 30px;
+                     padding: 10px;}
+
+      #ski th { color: #383838; 
+                background-color: #8dacb5;
+                font-size: 30px;}
+
+      #ski td { color:#4d216e; 
+                background-color: #bfbfbf;
+                font-size: 30px;}
+
+      #container {background-color: #d6d2c7;}
+
+      #lists {display: flex; gap: 20px;
+              justify-content: center;
+              margin-bottom: 50px;}
+
+     .caption {font-size: 8pt;}
+
+      #photo img { 
+        width: 400px; 
+        height: auto;
+        border: 5px solid #969187;
+        border-radius: 100px;}
+
+     h1 {background-color: #99a2de;
+        border: 2px solid #969187;
+        border-radius: 15px;
+        padding: 10px 20px;
+        display: inline-block;}
+
+     h3 {background-color: #99a2de;
+        border: 2px solid #969187;
+        border-radius: 15px;
+        padding: 10px 20px;
+        display: inline-block;}
+
+     p {font-size:18;}
+
     </style>
   </head>
-
+  
   <body>
-    <div id = "container">
-      <h1>MY SECOND WEB PAGE!!!</h1>
-      <p>This is my first paragraph of my second web page, I'm not really sure what to type here.</p>
-      <h3>SMALLER HEADER</h3>
-      <P>Here is some more text of random stuff, I hope this counts as a paragraph</P>
+    <div id="container">
+      <h1>Facts about Wick!</h1>
+      <p>This page is going to be a collection of some random facts about myself.</p>
 
-   <div id="thingsilike">
-    <h3>Here are some things I like</h3>
-    <ul>
-      <li>Hiking</li>
-      <li>Swimming</li>
-      <li>Jiu Jitsu</li>
-      <li>Cooking</li>
-      <li>Skiing</li>
-    </ul>
-   </div>
+      <h3>I'm a bio major and love everything outside.</h3>
+      <p>One thing I like to do around this time of the year is ski.</p>
 
-   <div is="ski">
-    <h3>Places I've skied this year</h3>
-    <table>
-      <tr>
-        <th>Ski Resort</th>
-        <th>Location</th>
-      </tr>
-      <tr>
-        <td>Boyne Highlands</td>
-        <td>MI</td>
-      </tr>
-      <tr>
-        <td>Vail</td>
-        <td>CO</td>
-      </tr>
-      <tr>
-        <td>Crested Butte</td>
-        <td>CO</td>
-      </tr>
-      <tr>
-        <td>Loveland</td>
-        <td>CO</td>
-      </tr>
-    </table>
-   </div>
+      <div id="lists">
+        <div id="thingsilike">
+          <h4>Here are some things I like</h3>
+          <ul>
+            <li>Hiking</li>
+            <li>Swimming</li>
+            <li>Jiu Jitsu</li>
+            <li>Cooking</li>
+            <li>Skiing</li>
+          </ul>
+        </div>
 
-      <div id = "photo">
-      <img src="https://atlantahumane.org/wp-content/uploads/2023/04/0-dogs-hero.jpg" alt="cute dog">
-      <p class="caption"> Cute dog </p>
-      <p class="caption"> Photo from https://atlantahumane.org/wp-content/uploads/2023/04/0-dogs-hero.jpg</p>
+        <div id="ski">
+          <h4>Places I've skied this year</h3>
+          <table>
+            <tr>
+              <th>Ski Resort</th>
+              <th>Location</th>
+            </tr>
+            <tr>
+              <td><a href="https://www.highlandsharborsprings.com/">Boyne Highlands</a></td>
+              <td>MI</td>
+            </tr>
+            <tr>
+              <td><a href="https://www.vail.com/">Vail</a></td>
+              <td>CO</td>
+            </tr>
+            <tr>
+              <td><a href="https://www.skicb.com/">Crested Butte</a></td>
+              <td>CO</td>
+            </tr>
+            <tr>
+              <td><a href="https://skiloveland.com/">Loveland</a></td>
+              <td>CO</td>
+            </tr>
+          </table>
+        </div>
       </div>
-        
- <p> <a href="https://wickhardison.github.io/lab401.html">Lab 1</a></p>
- <p> <a href="https://wickhardison.github.io/lab402.html">Lab 2</a> </p>
+
+      <div id="photo">
+        <img src="https://github.com/WickHardison/WickHardison.github.io/blob/main/fozzy.jpg?raw=true" alt="Cute dog">
       </div>
+
+      <p class="caption">My sister's dog; Fozzie... Not featured, my better dog; Yogi</p>
+
+    </div>
   </body>
 </html>
