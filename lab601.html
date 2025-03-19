@@ -2,79 +2,32 @@
   <head>
     <title>Web Mapping Lab 6.</title>
     <style>
-
-      * { font-family: arial;
-          text-align: center;}
-
-      #thingsilike { color: #383838; 
-                     background-color: #e8e8e8;
-                     width: 300px;
-                     height: 200px;
-                     border: 2px solid #969187;
-                     border-radius: 15px;
-                     font-size: 20px;}
-
-              #ski { color: #383838;
-                     background-color: #e8e8e8;
-                     width: 300px;
-                     border: 2px solid #969187;
-                     border-radius: 15px;
-                     font-size: 30px;
-                     padding: 10px;}
-
-      #ski th { color: #383838; 
-                background-color: #8dacb5;
-                font-size: 30px;}
-
-      #ski td { color:#4d216e; 
-                background-color: #bfbfbf;
-                font-size: 30px;}
-
+      * { font-family: arial; text-align: center;}
+      #thingsilike { color: #383838; background-color: #e8e8e8; width: 300px; height: 200px; border: 2px solid #969187; border-radius: 15px; font-size: 20px;}
+      #ski { color: #383838; background-color: #e8e8e8; width: 300px; border: 2px solid #969187; border-radius: 15px; font-size: 30px; padding: 10px;}
+      #ski th { color: #383838; background-color: #8dacb5; font-size: 30px;}
+      #ski td { color:#4d216e; background-color: #bfbfbf; font-size: 30px;}
       #container {background-color: #d6d2c7;}
-
-      #lists {display: flex; gap: 20px;
-              justify-content: center;
-              margin-bottom: 50px;}
-
-     .caption {font-size: 8pt;}
-
-      #photo img { 
-        width: 400px; 
-        height: auto;
-        border: 5px solid #969187;
-        border-radius: 100px;}
-
-     h1 {background-color: #99a2de;
-        border: 2px solid #969187;
-        border-radius: 15px;
-        padding: 10px 20px;
-        display: inline-block;}
-
-     h3 {background-color: #99a2de;
-        border: 2px solid #969187;
-        border-radius: 15px;
-        padding: 10px 20px;
-        display: inline-block;}
-
-     p {font-size:18;}
-
+      #lists {display: flex; gap: 20px; justify-content: center; margin-bottom: 50px;}
+      .caption {font-size: 8pt;}
+      #photo img { width: 400px; height: auto; border: 5px solid #969187; border-radius: 100px;}
+      h1 {background-color: #99a2de; border: 2px solid #969187; border-radius: 15px; padding: 10px 20px; display: inline-block;}
+      h3 {background-color: #99a2de; border: 2px solid #969187; border-radius: 15px; padding: 10px 20px; display: inline-block;}
+      p {font-size:18;}
     </style>
 
-      <script 
-        src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js">   
-      </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
-    
-      <script>
-$(document).ready (function () {
-//Do this when I click button "click1"
-    $("#click1").click( function() {
-    $("#click1").html("hiking");
-    });
+    <script>
+    $(document).ready(function () {
+      // Do this when I click button "click1"
+      $("#click1").click(function() {
+        $("#click1").html("hiking");
       });
-        </script>
+    });
+    </script>
   </head>
-  
+
   <body>
     <div id="container">
       <h1>Facts about Wick!</h1>
@@ -85,9 +38,9 @@ $(document).ready (function () {
 
       <div id="lists">
         <div id="thingsilike">
-          <h4>Here are some things I like</h3>
+          <h4>Here are some things I like</h4>
           <ul>
-            <li><button id="click">Click to Reveal...</button></li>
+            <li><button id="click1">Click to Reveal...</button></li>
             <li><button id="click2">Click to Reveal...</button></li>
             <li><button id="click3">Click to Reveal...</button></li>
             <li><button id="click4">Click to Reveal...</button></li>
@@ -96,7 +49,7 @@ $(document).ready (function () {
         </div>
 
         <div id="ski">
-          <h4>Places I've skied this year</h3>
+          <h4>Places I've skied this year</h4>
           <table>
             <tr>
               <th>Ski Resort</th>
