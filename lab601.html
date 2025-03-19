@@ -2,44 +2,49 @@
   <head>
     <title>Web Mapping Lab 6.</title>
     <style>
-* {font-family: arial;text-align: center;}
-#container {background-color: #d6d2c7;padding: 20px;}
-#lists-and-photo {display: flex;justify-content: space-between;gap: 20px;flex-wrap: wrap;}
-#thingsilike, #ski, #photo {background-color: #e8e8e8;border: 2px solid #969187;border-radius: 15px;font-size: 20px;padding: 10px;flex: 1;box-sizing: border-box;}
-#ski {font-size: 18px;padding: 10px;}
-#photo img {width: 100%;max-width: 400px;height: auto;border: 5px solid #969187;border-radius: 100px;}
-.caption {font-size: 8pt;}
+      * { font-family: arial; text-align: center;}
+      #thingsilike { color: #383838; background-color: #e8e8e8; width: 300px; height: 200px; border: 2px solid #969187; border-radius: 15px; font-size: 20px;}
+      #ski { color: #383838; background-color: #e8e8e8; width: 300px; border: 2px solid #969187; border-radius: 15px; font-size: 30px; padding: 10px;}
+      #ski th { color: #383838; background-color: #8dacb5; font-size: 30px;}
+      #ski td { color:#4d216e; background-color: #bfbfbf; font-size: 30px;}
+      #container {background-color: #d6d2c7;}
+      #lists {display: flex; gap: 20px; justify-content: center; margin-bottom: 50px;}
+      .caption {font-size: 8pt;}
+      #photo img { width: 400px; height: auto; border: 5px solid #969187; border-radius: 100px;}
+      h1 {background-color: #99a2de; border: 2px solid #969187; border-radius: 15px; padding: 10px 20px; display: inline-block;}
+      h3 {background-color: #99a2de; border: 2px solid #969187; border-radius: 15px; padding: 10px 20px; display: inline-block;}
+      p {font-size:18;}
     </style>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
     <script>
-      $(document).ready(function () {
-        // Do this when I click button "click1"
-        $("#click1").click(function() {
-          $("#div_ctrl1").html("Hiking");
-        });
-
-        // Do this when I click button "click2"
-        $("#click2").click(function() {
-          $("#div_ctrl2").html("Swimming");
-        });
-
-        // Do this when I click button "click3"
-        $("#click3").click(function() {
-          $("#div_ctrl3").html("Jiu Jitsu");
-        });
-
-        // Do this when I click button "click4"
-        $("#click4").click(function() {
-          $("#div_ctrl4").html("Cooking");
-        });
-
-        // Do this when I click button "click5"
-        $("#click5").click(function() {
-          $("#div_ctrl5").html("Skiing");
-        });
+    $(document).ready(function () {
+      // Do this when I click button "click1"
+      $("#click1").click(function() {
+        $("#div_ctrl1").html("Hiking");
       });
+
+      // Do this when I click button "click2"
+      $("#click2").click(function() {
+        $("#div_ctrl2").html("Swimming");
+      });
+
+      // Do this when I click button "click3"
+      $("#click3").click(function() {
+        $("#div_ctrl3").html("Jiu Jitsu");
+      });
+
+      // Do this when I click button "click4"
+      $("#click4").click(function() {
+        $("#div_ctrl4").html("Cooking");
+      });
+
+      // Do this when I click button "click5"
+      $("#click5").click(function() {
+        $("#div_ctrl5").html("Skiing");
+      });
+    });
     </script>
   </head>
 
@@ -51,21 +56,18 @@
       <h3>I'm a bio major and love everything outside.</h3>
       <p>One thing I like to do around this time of the year is ski.</p>
 
-      <!-- Main container that holds the 3 sections (Things I Like, Ski, and Photo) -->
-      <div id="lists-and-photo">
-        <!-- Section for Things I Like -->
+      <div id="lists">
         <div id="thingsilike">
           <h4>Here are some things I like</h4>
           <ul>
-            <li><button id="click1">Click to Reveal...</button></li>
-            <li><button id="click2">Click to Reveal...</button></li>
-            <li><button id="click3">Click to Reveal...</button></li>
-            <li><button id="click4">Click to Reveal...</button></li>
-            <li><button id="click5">Click to Reveal...</button></li>
+            <li><div id="div_ctrl1"><button id="click1">Click to Reveal...</button></div></li>
+            <li><div id="div_ctrl2"><button id="click2">Click to Reveal...</button></div></li>
+            <li><div id="div_ctrl3"><button id="click3">Click to Reveal...</button></div></li>
+            <li><div id="div_ctrl4"><button id="click4">Click to Reveal...</button></div></li>
+            <li><div id="div_ctrl5"><button id="click5">Click to Reveal...</button></div></li>
           </ul>
         </div>
 
-        <!-- Section for Ski Resorts -->
         <div id="ski">
           <h4>Places I've skied this year</h4>
           <table>
@@ -91,14 +93,14 @@
             </tr>
           </table>
         </div>
+      </div>
 
-        <!-- Section for Photo -->
-        <div id="photo">
-          <img src="https://github.com/WickHardison/WickHardison.github.io/blob/main/fozzy.jpg?raw=true" alt="Cute dog">
-        </div>
+      <div id="photo">
+        <img src="https://github.com/WickHardison/WickHardison.github.io/blob/main/fozzy.jpg?raw=true" alt="Cute dog">
       </div>
 
       <p class="caption">My sister's dog; Fozzie... Not featured, my better dog; Yogi</p>
+
     </div>
   </body>
 </html>
