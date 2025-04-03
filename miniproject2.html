@@ -23,7 +23,7 @@
               $("#word").text(blank);
 
               // this is the list of letters that have been tried
-              triedLetters = " ";
+              triedLetters = "";
 
               // this is the number of tries left
               tries = 10;
@@ -96,8 +96,8 @@
                     }
 
                     // add the letter to letters already tried
-                    triedletters = triedletters + letter;
-                    console.log("triedletters is ", triedletters);
+                    triedLetters = triedLetters + letter;
+                    console.log("triedLetters is ", triedLetters);
                     console.log("word is" , word);
                     
                   }
