@@ -65,6 +65,7 @@
                       if (tries < 1) {  
                         gamelost = true;
                         $("#info").text("Sorry, you're out of guesses. You LOSE!");
+                        $("#loseImage").show(); // Show the lose image
                       }
                     
                     
@@ -92,6 +93,7 @@
                       if (!blank.includes("-")){
                         gameWon = true;
                         $("#info").text("You WON! Great Job!");
+                        $("#winImage").show(); // Show the win image
                       }
                     }
 
@@ -142,5 +144,8 @@
      <span class="letter" id="y">y</span>
      <span class="letter" id="z">z</span>  
      </div>
+
+    <img id="winImage" src="https://t3.ftcdn.net/jpg/03/12/81/58/360_F_312815843_CdVm05kiBenU3YmChP1KRIzcblRgTQFV.jpg" alt="You Won!" style="display:none; width: 300px; height: 300px;">
+    <img id="loseImage" src="https://static.vecteezy.com/system/resources/previews/002/413/485/non_2x/you-lose-neon-signs-style-text-vector.jpg" alt="You Lost!" style="display:none; width: 300px; height: 300px;">  
   </body>
 </html>
