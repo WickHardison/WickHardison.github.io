@@ -39,7 +39,7 @@
                   // check if the game has been won or lost
                   if (gameWon != true && gameLost != true) {
                     // erase the info box
-                    $("info").text("");
+                    $("#info").text("");
                 
                     // use text to get the letter that was clicked on
                     letter = $(this).text();
@@ -63,7 +63,7 @@
 
                       // are they out of tries? then they lost!
                       if (tries < 1) {  
-                        gamelost = true;
+                        gameLost = true;
                         $("#info").text("Sorry, you're out of guesses. You LOSE!");
                         $("#loseImage").show(); // Show the lose image
                       }
