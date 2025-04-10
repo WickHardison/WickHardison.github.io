@@ -61,6 +61,15 @@
       .setLatLng([51.513, -0.09])
       .setContent("I am a standalone popup.")
       .openOn(map);
+
+      // Shows Coordinates As Pop-Up When You Click On Map
+      var popup = L.popup();
+      function onMapClick(e) {
+      popup
+        .setLatLng(e.latlng)
+        .setContent("You clicked the map at " + e.latlng.toString())
+        .openOn(map);}
+      map.on('click', onMapClick);
       
     </script>
   </body>
