@@ -40,9 +40,7 @@
 
 <script>
 
-  // the document ready wraps our javascript
-	// to make sure that everything loads in the 
-	// right order
+// Map Script
 	$(document).ready(function() {
 
 		// Create Basemap
@@ -75,6 +73,22 @@
 		});
 	});
 
+// Button Script
+document.getElementById('OSMTilesBtn').addEventListener('click', function() {
+    map.eachLayer(function(layer) {
+        map.removeLayer(layer);
+    });
+    OSMTiles.addTo(map);
+});
+
+document.getElementById('HOTOSMTilesBtn').addEventListener('click', function() {
+    map.eachLayer(function(layer) {
+        map.removeLayer(layer);
+    });
+    HOTOSMTiles.addTo(map);
+});
+	
+	
 </script>
 </head>
 <body>
@@ -82,9 +96,9 @@
 <div id="map"></div>
 
 <div id="buttons"><p>Change Basemaps</p>
-	<span class="button" id="OSMTiles">OSMTiles</span>
-     	<span class="button" id="HOTOSMTiles">HOTOSMTiles</span>
-     	<span class="button" id="OpenTopoMap">OpenTopoMap</span> 
+	<span class="button" id="OSMTilesBtn">OSMTiles</span>
+     	<span class="button" id="HOTOSMTilesBtn">HOTOSMTiles</span>
+     	<span class="button" id="OpenTopoMapBtn">OpenTopoMap</span> 
      </div>
 
 </body>
