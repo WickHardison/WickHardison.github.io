@@ -73,12 +73,6 @@
 			newLayer = L.geoJSON(data);
 			layerControl.addOverlay(newLayer, "Trails");
 		});
-    
-		// World Hillshade
-		$.getJSON('https://services.arcgisonline.com/arcgis/rest/services/Elevation/World_Hillshade/MapServer/query?outFields=*&where=1%3D1&f=geojson', function(data) {
-			newLayer = L.geoJSON(data);
-			layerControl.addOverlay(newLayer, "Hillshade");
-		});
 	});
 
 </script>
