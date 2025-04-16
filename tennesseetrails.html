@@ -18,7 +18,7 @@
 			margin: 0;
 		}
 		
-		#map { width:100%; height: 70%; }
+		#map { width:80%; height: 60%; }
 		
 		h1 { color: #3293a8;
 		     font-family: "Garamond", serif;
@@ -46,7 +46,7 @@
 	$(document).ready(function() {
 
 		// Create Basemap
-		map = L.map('map').setView([35.5909, -83.4638], 10);
+		map = L.map('map').setView([35.5909, -83.4638], 11);
 
 		// Add three sets of background tiles - one from OSM,  one from HOT OSM, and one from openTopoMap
 		var OSMTiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
