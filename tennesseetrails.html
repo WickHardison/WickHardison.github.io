@@ -64,13 +64,6 @@
 // Add default tile layer
     HOTOSMTiles.addTo(map);
 
-// Add control for switching layers
-    L.control.layers({
-      "OpenStreetMap": OSMTiles,
-      "HOT OSM": HOTOSMTiles,
-      "OpenTopoMap": OpenTopoMap
-    }).addTo(map);
-
 // Load trail data
     $.getJSON('https://services5.arcgis.com/uv9ZRM2b74388t77/arcgis/rest/services/Trail/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson', function(data) {
       var trailLayer = L.geoJSON(data);
