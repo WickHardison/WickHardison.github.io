@@ -1,112 +1,154 @@
-	<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-	<base target="_top">
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
-<title>Trails</title>
-	
-	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
-  	<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <base target="_top">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <title>Trails</title>
 
-	<style>
-		html, body {height: 100%;margin: 0;}
-		
-		#map { width:50%; height: 50%; }
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
-		#photo img { width:100%; height 100px; }
-		
-		h1 { color: #3293a8;font-family: serif;font-size: 30px;}
-		
-		p { font: serif 10px;color: #3293a8;}
-		
-		#header {width: 100%;margin: auto;align: center;}
-		
-		a { text-decoration: none; color: inherit; }
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      background-color: #383b39;
+      font-family: serif;
+    }
 
-		body {background-color: #383b39; }
-}
-	</style>
+    #photo img {
+      width: 100%;
+      height: 100px;
+      object-fit: cover;
+    }
+
+    h1 {
+      color: #3293a8;
+      font-size: 30px;
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    #mapContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      gap: 10px;
+    }
+
+    #map {
+      width: 80vw;
+      height: 50vh;
+      border: 2px solid #3293a8;
+      border-radius: 8px;
+    }
+
+    #buttons {
+      text-align: center;
+    }
+
+    #buttons p {
+      color: #3293a8;
+      margin: 10px 0 5px;
+    }
+
+    .button {
+      margin: 0 5px;
+      padding: 8px 12px;
+      font-size: 14px;
+      background-color: #3293a8;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background-color: #26758a;
+    }
+  </style>
 </head>
 <body>
   <div id="photo">
-        <img src="https://github.com/WickHardison/WickHardison.github.io/blob/main/Header.png?raw=true" alt="Mountain Header">
-      </div>
-	
-<h1>Great Smoky Mountain National Park Trails</h1>
+    <img src="https://github.com/WickHardison/WickHardison.github.io/blob/main/Header.png?raw=true" alt="Mountain Header">
+  </div>
 
-<div id="map"></div>
+  <h1>Great Smoky Mountain National Park Trails</h1>
 
-<div id="buttons"><p>Change Basemaps</p>
-	<button class="button" id="OSMTilesBtn">OpenStreetMap</button>
- 	<button class="button" id="HOTOSMTilesBtn">HOT OSM</button>
-	<button class="button" id="OpenTopoMapBtn">OpenTopoMap</button>
-     </div>
+  <div id="mapContainer">
+    <div id="map"></div>
 
-</body>
-<script>
-// Map Scripts
-	 $(document).ready(function() {
-// Initialize the map
-    var map = L.map('map').setView([35.5870, -83.5304], 10);
+    <div id="buttons">
+      <p>Change Basemaps</p>
+      <button class="button" id="OSMTilesBtn">OpenStreetMap</button>
+      <button class="button" id="HOTOSMTilesBtn">HOT OSM</button>
+      <button class="button" id="OpenTopoMapBtn">OpenTopoMap</button>
+    </div>
+  </div>
 
-// Define tile layers
-    var OSMTiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 19,
-      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-    });
+  <script>
+    $(document).ready(function () {
+      var map = L.map('map').setView([35.5870, -83.5304], 10);
 
-    var HOTOSMTiles = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
-      maxZoom: 19,
-      attribution: '© OpenStreetMap contributors, Tiles style by Humanitarian OpenStreetMap Team hosted by OpenStreetMap France'
-    });
+      var OSMTiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+      });
 
-    var OpenTopoMap = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
-      maxZoom: 19,
-      attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
-    });
+      var HOTOSMTiles = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '© OpenStreetMap contributors, Tiles style by Humanitarian OpenStreetMap Team hosted by OpenStreetMap France'
+      });
 
-// Add default tile layer
-    HOTOSMTiles.addTo(map);
+      var OpenTopoMap = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: 'Map data: &copy; OpenStreetMap contributors, SRTM | Map style: OpenTopoMap (CC-BY-SA)'
+      });
 
-// Add Campsite #18 Marker
-var campIcon = L.icon({
-  iconUrl: 'https://github.com/WickHardison/WickHardison.github.io/blob/main/Camp.png?raw=true',
-  iconSize: [16, 16], // Adjust size as needed
-  iconAnchor: [8, 8],
-  popupAnchor: [0, -8]
-});
-
-var marker = L.marker([35.628162, -83.705354], {icon: campIcon}).addTo(map);
-marker.bindPopup("<b>West Prong #18 Campsite.</b>").openPopup();
-
-// Load trail data
-    $.getJSON('https://services5.arcgis.com/uv9ZRM2b74388t77/arcgis/rest/services/Trail/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson', function(data) {
-      var trailLayer = L.geoJSON(data);
-      trailLayer.addTo(map);
-    });
-
-// Button event listeners
-    $('#OSMTilesBtn').click(function() {
-      map.removeLayer(HOTOSMTiles);
-      map.removeLayer(OpenTopoMap);
-      OSMTiles.addTo(map);
-    });
-
-    $('#HOTOSMTilesBtn').click(function() {
-      map.removeLayer(OSMTiles);
-      map.removeLayer(OpenTopoMap);
       HOTOSMTiles.addTo(map);
-    });
 
-    $('#OpenTopoMapBtn').click(function() {
-      map.removeLayer(OSMTiles);
-      map.removeLayer(HOTOSMTiles);
-      OpenTopoMap.addTo(map);
+      var campIcon = L.icon({
+        iconUrl: 'https://github.com/WickHardison/WickHardison.github.io/blob/main/Camp.png?raw=true',
+        iconSize: [16, 16],
+        iconAnchor: [8, 8],
+        popupAnchor: [0, -8]
+      });
+
+      var marker = L.marker([35.628162, -83.705354], { icon: campIcon }).addTo(map);
+      marker.bindPopup("<b>West Prong #18 Campsite.</b>").openPopup();
+
+      $.getJSON('https://services5.arcgis.com/uv9ZRM2b74388t77/arcgis/rest/services/Trail/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson', function (data) {
+        var trailLayer = L.geoJSON(data);
+        trailLayer.addTo(map);
+      });
+
+      $('#OSMTilesBtn').click(function () {
+        map.removeLayer(HOTOSMTiles);
+        map.removeLayer(OpenTopoMap);
+        OSMTiles.addTo(map);
+      });
+
+      $('#HOTOSMTilesBtn').click(function () {
+        map.removeLayer(OSMTiles);
+        map.removeLayer(OpenTopoMap);
+        HOTOSMTiles.addTo(map);
+      });
+
+      $('#OpenTopoMapBtn').click(function () {
+        map.removeLayer(OSMTiles);
+        map.removeLayer(HOTOSMTiles);
+        OpenTopoMap.addTo(map);
+      });
     });
-  });
-</script>
+  </script>
+</body>
 </html>
