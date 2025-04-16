@@ -40,7 +40,7 @@
 
 <script>
 
-// Map Script
+// Map Scripts
 	$(document).ready(function() {
 
 		// Create Basemap
@@ -73,7 +73,7 @@
 		});
 	});
 
-// Button Script
+// Button Scripts
 document.getElementById('OSMTilesBtn').addEventListener('click', function() {
     map.eachLayer(function(layer) {
         map.removeLayer(layer);
@@ -87,7 +87,12 @@ document.getElementById('HOTOSMTilesBtn').addEventListener('click', function() {
     });
     HOTOSMTiles.addTo(map);
 });
-	
+document.getElementById('OpenTopoMapBtn').addEventListener('click', function() {
+    map.eachLayer(function(layer) {
+        map.removeLayer(layer);
+    });
+    OpenTopoMap.addTo(map);
+});
 	
 </script>
 </head>
