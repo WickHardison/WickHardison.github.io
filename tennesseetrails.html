@@ -65,14 +65,14 @@
     HOTOSMTiles.addTo(map);
 
 // Add Campsite #18 Marker
-    var campIcon = L.icon({
-    iconUrl: 'https://github.com/WickHardison/WickHardison.github.io/blob/main/Camp.png?raw=true',
-    iconSize: [16, 16],
-    iconAnchor: [8, 8],
-    popupAnchor: [0, -8]
+var campIcon = L.icon({
+  iconUrl: 'https://github.com/WickHardison/WickHardison.github.io/blob/main/Camp.png?raw=true',
+  iconSize: [16, 16], // Adjust size as needed
+  iconAnchor: [8, 8],
+  popupAnchor: [0, -8]
 });
 
-L.marker([35.628162, -83.705354], {icon: campIcon}).addTo(map);
+var marker = L.marker([35.628162, -83.705354], {icon: campIcon}).addTo(map);
 marker.bindPopup("<b>West Prong #18 Campsite.</b>").openPopup();
 
 // Load trail data
