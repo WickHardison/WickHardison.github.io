@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+	<!DOCTYPE html>
 <html lang="en">
 <head>
 	<base target="_top">
@@ -45,9 +45,15 @@
 	// right order
 	$(document).ready(function() {
 
-		// Create Basemap
-		map = L.map('map').setView([0,0], 10);
-		
+		// Define the full extent of the trails
+		var trailsBounds = [
+		    [13738717.53, 3107123.12], // Southwest corner (YMin, XMin)
+		    [13783953.01, 3172505.35]  // Northeast corner (YMax, XMax)
+			];
+
+		// Initialize the map centered on the trails extent
+		var map = L.map('map').fitBounds(trailsBounds);
+
 		// Add three sets of background tiles - one from OSM,  one from HOT OSM, and one from openTopoMap
 		var OSMTiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 			maxZoom: 19,
