@@ -70,7 +70,7 @@
 
 		// Define a function to style my choropleth map
 		function style1(feature) {
-		d = feature.properties.PCT_POVERTY;
+		d = feature.properties.TTL_POPULATION_ALL;
 		answer = d > 30 ? '#800026' :
 		d > 20 ? '#DB0026 ' :
 		d > 15 ? '#E31A1C' :
@@ -94,7 +94,7 @@
 		$.getJSON('./acs_denver_2021.geojson', function(data) {acsDenver2021Layer = L.geoJSON(data,
 			{style: style1,
 			onEachFeature: function(feature, layer) {
-				layer.bindPopup("Percent Poverty: " + feature.properties.PCT_POVERTY + "%");
+				layer.bindPopup("Total Population: " + feature.properties.TTL_POPULATION_ALL);
 				
 			
 			}}).addTo(map);
