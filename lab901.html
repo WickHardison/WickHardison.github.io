@@ -71,15 +71,15 @@
 		// Define a function to style my choropleth map
 		function style1(feature) {
 		d = feature.properties.TTL_POPULATION_ALL;
-		answer = d > 7000 ? '#800026' :
-		d > 6000 ? '#DB0026 ' :
-		d > 5000 ? '#DB0026 ' :
-		d > 4000 ? '#DB0026 ' :
-		d > 3000 ? '#E31A1C' :
-		d > 2500 ? '#FC4E2A' :
-		d > 2000 ? '#FD8D3C' :
-		d > 1500 ? '#FEB24C' :
-		d > 1 ? '#FED976' :
+		answer = d > 7000 ? '#4d004b' :
+		d > 6000 ? '#810f7c' :
+		d > 5000 ? '#88419d' :
+		d > 4000 ? '#8c6bb1' :
+		d > 3000 ? '#8c96c6' :
+		d > 2500 ? '#9ebcda' :
+		d > 2000 ? '#bfd3e6' :
+		d > 1500 ? '#e0ecf4' :
+		d > 1 ? '#f7fcfd' :
 		'#FFEDA0';
 		styleReturn = {
 		fillColor : answer,
