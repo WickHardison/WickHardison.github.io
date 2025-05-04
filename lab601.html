@@ -42,6 +42,15 @@
       // Do this when I click button "click5"
       $("#click5").click(function() {
         $("#div_ctrl5").html("Skiing");
+
+$("#fadeOutBtn").click(function() {
+  $("#fozzyImg").fadeOut();
+});
+
+$("#fadeInBtn").click(function() {
+  $("#fozzyImg").fadeIn();
+});
+        
       });
     });
     </script>
@@ -99,6 +108,11 @@
       </div>
 
       <p class="caption">My sister's dog; Fozzie... Not featured, my better dog; Yogi</p>
+
+      <div>
+  <button id="fadeOutBtn">Fade Out Image</button>
+  <button id="fadeInBtn">Fade In Image</button>
+</div>
 
     </div>
   </body>
